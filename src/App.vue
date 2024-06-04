@@ -3,34 +3,32 @@ import AppHeader from './components/AppHeader.vue'
 
 export default {
 
-components: {
-  AppHeader
-},
+  components: {
+    AppHeader
+  },
 
-data() {
-  return {
+  data() {
+    return {
 
-    
+    }
+  },
 
-  }
-},
+  methods: {
 
-methods: {
 
-  
-},
+  },
 
-mounted() {
+  mounted() {
 
-},
+  },
 
 }
 </script>
 
 <template>
-  
+
+  <AppHeader />
+
 </template>
 
-<style scoped>
-
-</style>
+<style scoped></style>
