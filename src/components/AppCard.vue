@@ -57,7 +57,6 @@ export default {
                 <div class="st_card">
                     <img :src="element.img" alt="">
                 </div>
-
                 <div>
                     <h3>{{ element.title }}</h3>
                 </div>
