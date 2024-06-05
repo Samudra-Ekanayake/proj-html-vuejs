@@ -13,26 +13,34 @@ export default {
     data() {
         return {
             navList: [
-                'HOME', 'COURSES', 'INSTRUCTORS', 'EVENTS', 'PAGES', 'ELEMENTS',
+                { name: 'HOME', dropdown: ['home', 'home'], show: false },
+                { name: 'COURSES', dropdown: ['Course 1', 'Course 2'], show: false },
+                { name: 'INSTRUCTORS', dropdown: ['Instructor 1', 'Instructor 2'], show: false },
+                { name: 'EVENTS', dropdown: ['event 1', 'event 2'], show: false },
+                { name: 'PAGES', dropdown: ['Page 1', 'Page 2'] },
+                { name: 'ELEMENTS', dropdown: ['Element 1', 'Element 2'], show: false },
             ],
 
             HeaderSlide: [
                 {
                     title: 'Accelerate Your Career',
                     content: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi maxime nisi tempora. Tempora quisquam optio autem, quod mollitia eius veniam dolore nam, ipsum fuga tenetur quae amet enim itaque porro.',
-                    image: 'src/assets/h5-slide-1-background.jpg'
+                    image: 'src/assets/h5-slide-1-background.jpg',
+                    button: 'REGISTER NOW'
                 },
 
                 {
                     title: 'Premium Education',
                     content: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi maxime nisi tempora. Tempora quisquam optio autem, quod mollitia eius veniam dolore nam, ipsum fuga tenetur quae amet enim itaque porro.',
-                    image: 'src/assets/h5-slide-2-background.jpg'
+                    image: 'src/assets/h5-slide-2-background.jpg',
+                    button: 'REGISTER NOW'
                 },
 
                 {
                     title: 'Contemporary Ideas',
                     content: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi maxime nisi tempora. Tempora quisquam optio autem, quod mollitia eius veniam dolore nam, ipsum fuga tenetur quae amet enim itaque porro.',
-                    image: 'src/assets/h5-slide-3-background.jpg'
+                    image: 'src/assets/h5-slide-3-background.jpg',
+                    button: 'REGISTER NOW'
                 },
             ],
 
@@ -50,11 +58,18 @@ export default {
             this.currentSlide = (this.currentSlide - 1 + this.HeaderSlide.length) % this.HeaderSlide.length;
         },
         startCarousel() {
-            this.interval = setInterval(this.nextSlide, 3000); // Cambia immagine ogni 3 secondi
+            this.interval = setInterval(this.nextSlide, 5000); // Cambia immagine ogni 3 secondi
         },
         stopCarousel() {
             clearInterval(this.interval);
             this.interval = null;
+        },
+
+        showDropdown(index) {
+            this.navList[index].show = true;
+        },
+        hideDropdown(index) {
+            this.navList[index].show = false;
         }
 
     },
@@ -78,7 +93,8 @@ export default {
 
 <template>
     <!-- NAVBAR -->
-    <div class="container-fluid st_slideContainer" :style="{ backgroundImage: `url(${HeaderSlide[currentSlide].image})` }">
+    <div class="container-fluid st_slideContainer"
+        :style="{ backgroundImage: `url(${HeaderSlide[currentSlide].image})` }">
         <div class="container-fluid">
             <div class="row">
                 <div class="col-12">
@@ -87,9 +103,15 @@ export default {
                             <img src="../assets/logo-light.png" alt="">
                         </div>
                         <div class="col-7 st_links">
-                            <ul class="d-flex">
-                                <li class="mx-4" v-for="element in navList">
-                                    <a href="">{{ element }}</a>
+                            <ul class="d-flex m-0">
+                                <li class="mx-4" v-for="element, index in navList" 
+                                    @mouseover="showDropdown(index)"
+                                    @mouseleave="hideDropdown(index)">
+                                    <a href="">{{ element.name }}</a>
+                                    <ul v-if="element.dropdown && element.dropdown.length && element.show"
+                                        class="dropdown">
+                                        <li v-for="item in element.dropdown">{{ item }}</li>
+                                    </ul>
                                 </li>
                             </ul>
                         </div>
@@ -104,19 +126,21 @@ export default {
             </div>
         </div>
 
-        <div class="container-fluid st_containerMain ">
-            <div class="row">
-                <div class="col-12">
-                    <!-- <h2>{{ HeaderSlide[currentslide].title }}</h2> -->
-                    <p></p>
-
+        <div class="container-fluid st_containerMain">
+            <div class="row st_mainRow">
+                <div class="col-12 text-center st_mainContent">
+                    <h1 class="st_contentTitle">{{ HeaderSlide[currentSlide].title }}</h1>
+                    <p>{{ HeaderSlide[currentSlide].content }}</p>
+                    <BUtton class="st_slideContentButton">{{ HeaderSlide[currentSlide].button }}</BUtton>
+                    <!--  <button @click="nextSlide" class="nextBtn"><i class="fa-solid fa-caret-right"></i></button>
+                    <button @click="prevSlide" class="prevBtn"><i class="fa-solid fa-caret-left"></i></button> -->
+                    <p @click="nextSlide" class="nextBtn"><i class="fa-solid fa-caret-right"></i></p>
+                    <p @click="prevSlide" class="prevBtn"><i class="fa-solid fa-caret-left"></i></p>
                 </div>
             </div>
         </div>
     </div>
 
-    <button @click="nextSlide">Next</button>
-    <button @click="prevSlide">Previous</button>
 
 
     <AppCard />
@@ -126,17 +150,52 @@ export default {
 </template>
 
 <style scoped>
-
 .st_slideContainer {
     background-color: blanchedalmond;
 }
-.st_containerMain {
-    height: 40rem;
-    margin-bottom: 4rem;
-    background-size: cover;   
-    background-position: center;   
-    transition: background-image 1s ease-in-out;
 
+.st_containerMain {
+    height: 28rem;
+    margin-bottom: 4rem;
+    background-size: cover;
+    background-position: center;
+    transition: background-image 1s ease-in-out;
+}
+
+.dropdown {
+    position: absolute;
+    background: white;
+    color: black;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    top: 100%;
+    left: 0;
+}
+
+.dropdown li {
+    padding: 0.5rem 1rem;
+}
+
+.dropdown li:hover {
+    background: #f0f0f0;
+}
+
+
+
+.st_mainContent {
+    color: white;
+    max-width: 1000px;
+    /* Imposta la larghezza massima del contenuto */
+    margin: 0 auto;
+    /* Per centrare il contenuto */
+    word-wrap: break-word;
+    /* Per fare andare a capo il testo lungo */
+
+}
+
+.st_mainRow {
+    margin-top: 10rem;
 }
 
 .st_logo img {
@@ -161,6 +220,31 @@ export default {
     align-items: center;
     justify-content: center;
 
+}
+
+.st_contentTitle {
+    font-size: 80px;
+}
+
+.st_slideContentButton {
+    padding: 1rem;
+    background-color: #16B7FE;
+    color: white;
+    border: none;
+}
+
+.nextBtn {
+    position: absolute;
+    left: 88rem;
+    top: 18rem;
+    font-size: 50px;
+}
+
+.prevBtn {
+    position: absolute;
+    right: 88rem;
+    top: 18rem;
+    font-size: 50px;
 }
 
 a {

@@ -73,7 +73,7 @@ export default {
     margin: 1rem;
     height: 12rem;
     width: 12rem;
-    background-color: bisque;
+    background-color: #F2F8FC;
 }
 
 .st_card {
