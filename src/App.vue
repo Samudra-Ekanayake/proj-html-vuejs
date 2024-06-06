@@ -1,10 +1,11 @@
 <script>
 import AppHeader from './components/AppHeader.vue'
+import PageFooter from './components/PageFooter.vue'
 
 export default {
 
   components: {
-    AppHeader
+    AppHeader, PageFooter
   },
 
   data() {
@@ -28,6 +29,7 @@ export default {
 <template>
 
   <AppHeader />
+  <PageFooter />
 
 </template>
 

@@ -25,21 +25,21 @@ export default {
                 {
                     title: 'Accelerate Your Career',
                     content: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi maxime nisi tempora. Tempora quisquam optio autem, quod mollitia eius veniam dolore nam, ipsum fuga tenetur quae amet enim itaque porro.',
-                    image: 'src/assets/h5-slide-1-background.jpg',
+                    image: 'src/assets/img/h5-slide-1-background.jpg',
                     button: 'REGISTER NOW'
                 },
 
                 {
                     title: 'Premium Education',
                     content: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi maxime nisi tempora. Tempora quisquam optio autem, quod mollitia eius veniam dolore nam, ipsum fuga tenetur quae amet enim itaque porro.',
-                    image: 'src/assets/h5-slide-2-background.jpg',
+                    image: 'src/assets/img/h5-slide-2-background.jpg',
                     button: 'REGISTER NOW'
                 },
 
                 {
                     title: 'Contemporary Ideas',
                     content: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi maxime nisi tempora. Tempora quisquam optio autem, quod mollitia eius veniam dolore nam, ipsum fuga tenetur quae amet enim itaque porro.',
-                    image: 'src/assets/h5-slide-3-background.jpg',
+                    image: 'src/assets/img/h5-slide-3-background.jpg',
                     button: 'REGISTER NOW'
                 },
             ],
@@ -108,7 +108,7 @@ export default {
                 <div class="col-12">
                     <div class="row mt-4">
                         <div class="col-3 st_logo">
-                            <img src="../assets/logo-light.png" alt="">
+                            <img src="../assets/img/logo-light.png" alt="">
                         </div>
                         <div class="col-7 st_links">
                             <ul class="d-flex m-0">

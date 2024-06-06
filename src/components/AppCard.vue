@@ -8,27 +8,27 @@ export default {
             cards: [
                 {
                     title: 'Languages',
-                    img: 'src/assets/h5-custom-icon-1.png'
+                    img: 'src/assets/img/h5-custom-icon-1.png'
                 },
                 {
                     title: 'Software',
-                    img: 'src/assets/h5-custom-icon-2.png'
+                    img: 'src/assets/img/h5-custom-icon-2.png'
                 },
                 {
                     title: 'Buisness',
-                    img: 'src/assets/h5-custom-icon-3.png'
+                    img: 'src/assets/img/h5-custom-icon-3.png'
                 },
                 {
                     title: 'Chemistry',
-                    img: 'src/assets/h5-custom-icon-4.png'
+                    img: 'src/assets/img/h5-custom-icon-4.png'
                 },
                 {
                     title: 'Science',
-                    img: 'src/assets/h5-custom-icon-5.png'
+                    img: 'src/assets/img/h5-custom-icon-5.png'
                 },
                 {
                     title: 'DIY&Craft',
-                    img: 'src/assets/h5-custom-icon-6.png'
+                    img: 'src/assets/img/h5-custom-icon-6.png'
                 },
 
             ]
