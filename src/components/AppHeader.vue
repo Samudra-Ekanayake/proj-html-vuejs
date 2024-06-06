@@ -65,12 +65,20 @@ export default {
             this.interval = null;
         },
 
+        // Funzione per mostrare il dropdown
         showDropdown(index) {
+            // Setta 'show' a true per mostrare il dropdown
+            console.log("Mostra dropdown:", index);
             this.navList[index].show = true;
         },
+        // Funzione per nascondere il dropdown
         hideDropdown(index) {
+            // Setta 'show' a false per nascondere il dropdown
+            console.log("Nascondi dropdown:", index);
             this.navList[index].show = false;
         }
+
+
 
     },
 
@@ -104,9 +112,8 @@ export default {
                         </div>
                         <div class="col-7 st_links">
                             <ul class="d-flex m-0">
-                                <li class="mx-4" v-for="element, index in navList" 
-                                    @mouseover="showDropdown(index)"
-                                    @mouseleave="hideDropdown(index)">
+                                <li class="mx-4" v-for="(element, index) in navList" @mouseover="showDropdown(index)"
+                                    @mouseleave="hideDropdown(index)" :class="{ 'dropdown-open': element.show }">
                                     <a href="">{{ element.name }}</a>
                                     <ul v-if="element.dropdown && element.dropdown.length && element.show"
                                         class="dropdown">
@@ -131,9 +138,7 @@ export default {
                 <div class="col-12 text-center st_mainContent">
                     <h1 class="st_contentTitle">{{ HeaderSlide[currentSlide].title }}</h1>
                     <p>{{ HeaderSlide[currentSlide].content }}</p>
-                    <BUtton class="st_slideContentButton">{{ HeaderSlide[currentSlide].button }}</BUtton>
-                    <!--  <button @click="nextSlide" class="nextBtn"><i class="fa-solid fa-caret-right"></i></button>
-                    <button @click="prevSlide" class="prevBtn"><i class="fa-solid fa-caret-left"></i></button> -->
+                    <button class="st_slideContentButton">{{ HeaderSlide[currentSlide].button }}</button>
                     <p @click="nextSlide" class="nextBtn"><i class="fa-solid fa-caret-right"></i></p>
                     <p @click="prevSlide" class="prevBtn"><i class="fa-solid fa-caret-left"></i></p>
                 </div>
@@ -171,6 +176,7 @@ export default {
     margin: 0;
     top: 100%;
     left: 0;
+    z-index: 1000;
 }
 
 .dropdown li {
@@ -180,6 +186,15 @@ export default {
 .dropdown li:hover {
     background: #f0f0f0;
 }
+
+.st_links li:hover > .dropdown {
+    display: block;
+}
+
+.dropdown-open .dropdown {
+    display: block;
+}
+
 
 
 
