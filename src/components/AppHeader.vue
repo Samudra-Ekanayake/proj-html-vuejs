@@ -155,6 +155,9 @@ export default {
 </template>
 
 <style scoped>
+
+/* container */
+
 .st_slideContainer {
     background-color: blanchedalmond;
 }
@@ -166,6 +169,8 @@ export default {
     background-position: center;
     transition: background-image 1s ease-in-out;
 }
+
+/************** dropdown *******************/
 
 .dropdown {
     position: absolute;
@@ -196,7 +201,7 @@ export default {
 }
 
 
-
+/* main-content */
 
 .st_mainContent {
     color: white;
@@ -271,11 +276,4 @@ ul {
     list-style-type: none;
 }
 
-.slide {
-    display: none;
-}
-
-.active {
-    display: block;
-}
 </style>

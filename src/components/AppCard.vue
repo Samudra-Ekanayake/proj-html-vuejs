@@ -55,7 +55,7 @@ export default {
         <div class="row d-flex justify-content-center">
             <div v-for="element in cards" class="col-2 st_square d-flex flex-column align-items-center pt-4">
                 <div class="st_card">
-                    <img :src="element.img" alt="">
+                    <img :src="element.img" alt="" class="st_zoom">
                 </div>
                 <div>
                     <h3>{{ element.title }}</h3>
@@ -78,5 +78,13 @@ export default {
 
 .st_card {
     margin-bottom: 2rem;
+}
+
+.st_zoom {
+  transition: transform 0.3s ease;
+}
+
+.st_card:hover .st_zoom {
+    transform: translateY(-10px);
 }
 </style>
