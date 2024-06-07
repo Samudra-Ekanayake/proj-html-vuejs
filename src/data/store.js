@@ -2,6 +2,15 @@ import { reactive } from 'vue';
 
 const store = reactive({
     // behavior
+
+    clients: [
+        { normal: '/src/assets/img/h5-client-2.png', hover: '/src/assets/img/h5-client-2-h.png', isActive: true },
+        { normal: '/src/assets/img/h5-client-3.png', hover: '/src/assets/img/h5-client-3-h.png', isActive: true },
+        { normal: '/src/assets/img/h5-client-4.png', hover: '/src/assets/img/h5-client-4-h.png', isActive: true },
+        { normal: '/src/assets/img/h5-client-5.png', hover: '/src/assets/img/h5-client-5-h.png', isActive: true },
+        { normal: '/src/assets/img/h5-client-1.png', hover: '/src/assets/img/h5-client-1-h.png', isActive: true }
+    ],
+
   tabs: [
     {
       id: 'list-home',

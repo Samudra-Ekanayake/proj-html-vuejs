@@ -73,21 +73,21 @@ export default {
                         <thead>
                             <th class="p-4 w-25">
                                 <div class="d-flex flex-column align-items-center">
-                                    <img src="../../../assets/img/h5-custom-icon-7.png" alt="">
+                                    <img src="/src/assets/img/h5-custom-icon-7.png" alt="">
                                     <h4 class="pt-3 fw-bold">Standard</h4>
                                     <h4 class="fw-bold">$12</h4>
                                 </div>
                             </th>
                             <th class="p-4 w-25">
                                 <div class="d-flex flex-column align-items-center">
-                                    <img src="../../../assets/img/h5-custom-icon-8.png" alt="">
+                                    <img src="/src/assets/img/h5-custom-icon-8.png" alt="">
                                     <h4 class="pt-3 fw-bold">Professional</h4>
                                     <h4 class="fw-bold">$59</h4>
                                 </div>
                             </th>
                             <th class="p-4 w-25">
                                 <div class="d-flex flex-column align-items-center">
-                                    <img src="../../../assets/img/h5-custom-icon-9.png" alt="">
+                                    <img src="/src/assets/img/h5-custom-icon-9.png" alt="">
                                     <h4 class="pt-3 fw-bold">Advanced</h4>
                                     <h4 class="fw-bold">$88</h4>
                                 </div>

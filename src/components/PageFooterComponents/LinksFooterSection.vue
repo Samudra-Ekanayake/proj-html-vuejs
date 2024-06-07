@@ -23,7 +23,7 @@ export default {
 
                 <!-- iAcademy -->
                 <div class="col-3 pe-4">
-                    <a href="" class="pb-5"><img class="w-50" src="../../../assets/img/footer-logo-1.png" alt=""></a>
+                    <a href="" class="pb-5"><img class="w-50" src="/src/assets/img/footer-logo-1.png" alt=""></a>
                     <span>Providing Life Changing Experiences Through Education. Class That Fit Your Busy Life. Closer
                         to
                         Home</span>
@@ -65,7 +65,7 @@ export default {
                 <!-- Flexible Learning -->
                 <div class="offset-2 col-3">
                     <h5 class="fw-bold pb-4">Flexible Learning</h5>
-                    <img class="w-100" src="../../../assets/img/footer-img-1.png" alt="">
+                    <img class="w-100" src="/src/assets/img/footer-img-1.png" alt="">
                 </div>
             </div>
 
